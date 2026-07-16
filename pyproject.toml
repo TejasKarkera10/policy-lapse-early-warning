@@ -1,0 +1,12 @@
+[project]
+name = "policy-lapse-early-warning"
+version = "0.1.0"
+description = "Lapse-risk early-warning system for a life insurance book: XGBoost + SHAP + RAG retention playbook"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
