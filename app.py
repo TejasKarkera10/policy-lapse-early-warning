@@ -40,8 +40,12 @@ def _axis(**kw):
 @st.cache_resource
 def load_artifacts():
     if not (ARTIFACTS_DIR / "pipeline.joblib").exists():
-        st.error("No trained model found. Run `make train` first.")
-        st.stop()
+        # First launch (e.g. a fresh Streamlit Cloud deploy): download the
+        # dataset and train in place.
+        from lapse.train import train as run_training
+
+        with st.spinner("First run: downloading data and training the model (~1 min)…"):
+            run_training()
     pipeline = joblib.load(ARTIFACTS_DIR / "pipeline.joblib")
     metrics = json.loads((ARTIFACTS_DIR / "metrics.json").read_text())
     book = pd.read_parquet(ARTIFACTS_DIR / "scored_book.parquet")
