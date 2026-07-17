@@ -6,7 +6,7 @@ sections; an LLM (or a deterministic template when no API key is
 configured) composes the recommendation, citing its sources.
 
 The LLM is behind a small protocol so swapping in Claude/Bedrock is a
-one-class change — retrieval, prompting, and citation logic are shared.
+one-class change - retrieval, prompting, and citation logic are shared.
 """
 
 import os
@@ -71,7 +71,7 @@ class TemplateLLM:
     the demo runs with zero secrets and never hallucinates.
     """
 
-    name = "template (no API key — deterministic composition)"
+    name = "template (no API key - deterministic composition)"
 
     def compose(self, context: str, drivers: list[str], chunks: list[Chunk]) -> str:
         lines = [
@@ -81,10 +81,10 @@ class TemplateLLM:
         ]
         for chunk in chunks:
             first_play = _first_list_item(chunk.text)
-            lines.append(f"- *{chunk.title}* — {first_play}")
+            lines.append(f"- *{chunk.title}* - {first_play}")
         lines.append("")
         lines.append(
-            "**Next step:** route per the escalation rules — a human agent "
+            "**Next step:** route per the escalation rules - a human agent "
             "makes the final call on any offer."
         )
         return "\n".join(lines)

@@ -19,7 +19,7 @@ in order:
    premium loan (APL)** and reduced paid-up options before the policy
    enters the grace period.
 
-Never lead with "your policy will terminate" — lead with options.
+Never lead with "your policy will terminate" - lead with options.
 
 ## Early-tenure disengagement
 
@@ -30,7 +30,7 @@ internalized the product's value. Effective plays:
    does and confirming beneficiary details.
 2. **Annual policy review** invitations framed around life changes, not
    sales.
-3. Enroll the client in **autopay** during the first service contact —
+3. Enroll the client in **autopay** during the first service contact -
    payment friction is the top mechanical cause of early lapse.
 
 ## Term product and conversion options
@@ -63,11 +63,11 @@ abstract. Plays:
 Current smokers pay loaded premiums, which compounds affordability
 pressure and lapse risk. Plays:
 
-1. Offer **re-rating after 12+ months smoke-free** — a concrete premium
+1. Offer **re-rating after 12+ months smoke-free** - a concrete premium
    reduction path that also improves retention.
 2. Wellness-program credits where available.
 3. If health has improved since issue for any client, initiate a
-   **reconsideration request** — a lower rate class is the strongest
+   **reconsideration request** - a lower rate class is the strongest
    retention lever available.
 
 ## Life-event and household changes
@@ -79,7 +79,7 @@ of coverage in the client's mind. Plays:
    under-insured growing households should be offered increases, while
    over-insured clients should be right-sized before they lapse.
 2. Recently divorced or widowed clients need a **beneficiary review**
-   call — it is also the highest-empathy retention touchpoint available.
+   call - it is also the highest-empathy retention touchpoint available.
 3. Clients with several dependents rarely want less coverage; if they
    show payment stress, lead with premium-mode and rider options, not
    face reduction.
@@ -93,6 +93,6 @@ Model scores route work; humans make the call.
 - **Watch tier**: automated educational touchpoint plus flag for the next
   scheduled review.
 - Any client who mentions financial hardship is escalated to a licensed
-  specialist — no automated offers.
+  specialist - no automated offers.
 - All outreach and outcomes are logged for model monitoring and
   intervention-effectiveness measurement (uplift, not just risk).

@@ -19,7 +19,7 @@ def feature_frame(df: pd.DataFrame) -> pd.DataFrame:
 def build_pipeline(seed: int = SEED) -> Pipeline:
     """One-hot categoricals, passthrough numerics, XGBoost on top.
 
-    Hyperparameters are conservative — shallow trees with subsampling —
+    Hyperparameters are conservative - shallow trees with subsampling -
     because at 10k rows the risk is overfitting, not underfitting.
     """
     encoder = ColumnTransformer(

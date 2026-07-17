@@ -2,7 +2,7 @@
 
 The source dataset ships without an outcome column, so we generate one
 from an actuarially-inspired logistic process. This is a *simulation*,
-documented and seeded, not real experience data — see the README's
+documented and seeded, not real experience data - see the README's
 "Honest limitations" section. The effect directions follow published
 lapse-experience studies (e.g. SOA persistency studies):
 

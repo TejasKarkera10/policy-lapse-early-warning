@@ -48,7 +48,7 @@ def shap_values(pipeline: Pipeline, df: pd.DataFrame) -> pd.DataFrame:
 
 
 def global_importance(shap_df: pd.DataFrame, top_k: int = 12) -> pd.Series:
-    """Mean |SHAP| per feature, descending — the global driver ranking."""
+    """Mean |SHAP| per feature, descending - the global driver ranking."""
     imp = shap_df.abs().mean().sort_values(ascending=False).head(top_k)
     imp.index = [humanize(f) for f in imp.index]
     return imp
@@ -58,7 +58,7 @@ def top_drivers(shap_row: pd.Series, top_k: int = 4) -> list[dict]:
     """The strongest risk-increasing drivers for one policy.
 
     Returns dicts of {feature, label, shap} sorted by SHAP descending,
-    keeping only features that push risk *up* — those are what a
+    keeping only features that push risk *up* - those are what a
     retention play can act on.
     """
     pushing_up = shap_row[shap_row > 0].sort_values(ascending=False).head(top_k)
@@ -71,10 +71,10 @@ def top_drivers(shap_row: pd.Series, top_k: int = 4) -> list[dict]:
 def risk_tier(prob: float, watch: float = 0.20, high: float = 0.35) -> str:
     """Route policies by calibrated probability (human-in-the-loop tiers)."""
     if prob >= high:
-        return "High — agent outreach"
+        return "High - agent outreach"
     if prob >= watch:
-        return "Watch — automated touchpoint"
-    return "Stable — no action"
+        return "Watch - automated touchpoint"
+    return "Stable - no action"
 
 
 def expected_saves(probs: np.ndarray, contact_rate: float = 0.30) -> float:

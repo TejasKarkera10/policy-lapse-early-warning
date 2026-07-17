@@ -35,7 +35,7 @@ def test_risk_tiers_partition_probability_space():
     assert risk_tier(0.25).startswith("Watch")
     assert risk_tier(0.50).startswith("High")
     assert {risk_tier(p) for p in np.linspace(0, 1, 101)} == {
-        "Stable — no action",
-        "Watch — automated touchpoint",
-        "High — agent outreach",
+        "Stable - no action",
+        "Watch - automated touchpoint",
+        "High - agent outreach",
     }

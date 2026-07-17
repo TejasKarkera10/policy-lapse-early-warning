@@ -18,7 +18,7 @@ from lapse.config import ARTIFACTS_DIR, TARGET, TIER_HIGH, TIER_WATCH
 from lapse.explain import global_importance, risk_tier, shap_values, top_drivers
 from lapse.rag import RetentionAdvisor
 
-# Chart tokens (light mode) — series colors from the validated palette,
+# Chart tokens (light mode) - series colors from the validated palette,
 # text/grid from the ink roles. Identity is never carried by color alone.
 BLUE = "#2a78d6"   # categorical slot 1 / sequential hue
 RED = "#e34948"    # diverging warm pole (risk-increasing)
@@ -70,7 +70,7 @@ st.title("Policy Lapse Early-Warning System")
 st.markdown(
     "Finds the policies most likely to **lapse (stop being paid) in the next 24 "
     "months**, explains *why* each one is at risk, and recommends a retention "
-    "action a human agent can take — before the policy is lost."
+    "action a human agent can take - before the policy is lost."
 )
 
 s1, s2, s3 = st.columns(3)
@@ -79,8 +79,8 @@ s1.markdown(
     "calibration** turns scores into true probabilities you can budget against."
 )
 s2.markdown(
-    "**2 · Explain** \n**SHAP** breaks each score into its drivers — e.g. "
-    "*premium is 13% of this client's income* — so the score is never a black box."
+    "**2 · Explain** \n**SHAP** breaks each score into its drivers - e.g. "
+    "*premium is 13% of this client's income* - so the score is never a black box."
 )
 s3.markdown(
     "**3 · Act (RAG + LLM)** \nThe top risk drivers become a search query over a "
@@ -89,7 +89,7 @@ s3.markdown(
 )
 st.caption(
     "Stack: Python · pandas · scikit-learn · XGBoost · SHAP · TF-IDF retrieval "
-    "(RAG) · Anthropic Claude (optional) · Streamlit · pytest — data: Kaggle life-"
+    "(RAG) · Anthropic Claude (optional) · Streamlit · pytest - data: Kaggle life-"
     "insurance retention dataset; outcomes **simulated** (no labels ship with it), "
     "see README."
 )
@@ -112,9 +112,9 @@ with tab_portfolio:
     with left:
         st.subheader("Where the book stands: policies by risk tier")
         tier_order = [
-            "High — agent outreach",
-            "Watch — automated touchpoint",
-            "Stable — no action",
+            "High - agent outreach",
+            "Watch - automated touchpoint",
+            "Stable - no action",
         ]
         tier_df = (
             tiers.value_counts().reindex(tier_order).fillna(0).astype(int)
@@ -202,7 +202,7 @@ with tab_portfolio:
         st.caption(
             "Bars rise left to right: the higher the model scored a policy, the "
             "more often it really lapsed. The riskiest group lapses at ~2.7× the "
-            "book average — that's where outreach pays for itself."
+            "book average - that's where outreach pays for itself."
         )
 
     st.subheader("What drives lapse risk across the book")
@@ -227,7 +227,7 @@ with tab_portfolio:
     st.altair_chart(imp_chart, width="stretch")
     st.caption(
         "Top 8 drivers, sized by their share of total SHAP importance. "
-        "Affordability (premium vs. income) and age dominate — exactly the levers "
+        "Affordability (premium vs. income) and age dominate - exactly the levers "
         "the retention playbook has plays for."
     )
 
